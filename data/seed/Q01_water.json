@@ -1,0 +1,46 @@
+{
+  "question_id": "Q01",
+  "domain": "General science",
+  "prompt": "পানির একটি অণুতে কতটি হাইড্রোজেন পরমাণু এবং কতটি অক্সিজেন পরমাণু থাকে?",
+  "model_answer": "পানির একটি অণুতে দুটি হাইড্রোজেন পরমাণু থাকে। পানির একটি অণুতে একটি অক্সিজেন পরমাণু থাকে।",
+  "max_mark": 10.0,
+  "increment": 0.5,
+  "concepts": [
+    {
+      "id": "C1",
+      "label": "Two hydrogen atoms",
+      "weight": 6.0,
+      "expressions": ["দুটি হাইড্রোজেন পরমাণু"],
+      "clauses": ["পানির একটি অণুতে দুটি হাইড্রোজেন পরমাণু থাকে।"],
+      "allow_overlap": false
+    },
+    {
+      "id": "C2",
+      "label": "One oxygen atom",
+      "weight": 4.0,
+      "expressions": ["একটি অক্সিজেন পরমাণু"],
+      "clauses": ["পানির একটি অণুতে একটি অক্সিজেন পরমাণু থাকে।"],
+      "allow_overlap": false
+    }
+  ],
+  "required_items": [
+    {
+      "id": "R1",
+      "kind": "concept",
+      "concept_id": "C1",
+      "phrases": [],
+      "clauses": [],
+      "absence_cap": 6.0
+    }
+  ],
+  "wrong_ideas": [
+    {
+      "id": "W1",
+      "label": "Three hydrogen atoms in a water molecule",
+      "expressions": ["তিনটি হাইড্রোজেন পরমাণু"],
+      "clauses": ["পানির একটি অণুতে তিনটি হাইড্রোজেন পরমাণু থাকে।"],
+      "action": "cap",
+      "amount": 2.0
+    }
+  ]
+}
