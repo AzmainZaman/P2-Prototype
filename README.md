@@ -30,6 +30,13 @@ On first run the worked example from §4.5.6 (water molecule, question `Q01`) is
 
 Saved configurations live in `data/configs/`. Set `GRADER_CONFIG_DIR` to use another folder.
 
+## Hosted demo
+
+The app runs on [Streamlit Community Cloud](https://share.streamlit.io) (main file `app.py`);
+Vercel cannot host Streamlit apps. Hosted storage is temporary, so a banner reads
+"Demo deployment: saved questions reset when the app restarts." It appears automatically on
+Streamlit Community Cloud and never locally. Set `DEMO_DEPLOYMENT=true` or `false` to override.
+
 ## Demo walkthrough
 
 1. **Home** — show the workspace, the locked "Grade answer" card and the progress table.

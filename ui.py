@@ -44,6 +44,25 @@ def get_store() -> Store:
     return store
 
 
+def is_demo_deployment() -> bool:
+    """True on a hosted demo, where local files do not survive restarts.
+
+    DEMO_DEPLOYMENT=true/false forces the answer; otherwise Streamlit Community
+    Cloud is detected by its app checkout location.
+    """
+    setting = os.environ.get("DEMO_DEPLOYMENT", "").strip().lower()
+    if setting in ("1", "true", "yes"):
+        return True
+    if setting in ("0", "false", "no"):
+        return False
+    return Path("/mount/src").is_dir()
+
+
+def demo_banner() -> None:
+    if is_demo_deployment():
+        st.info("Demo deployment: saved questions reset when the app restarts.", icon=":material/info:")
+
+
 def inject_css() -> None:
     st.markdown(_CSS, unsafe_allow_html=True)
 

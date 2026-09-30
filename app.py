@@ -8,6 +8,7 @@ import ui
 
 st.set_page_config(page_title="Teacher Console · Bangla Grading Assistant", page_icon="📝", layout="wide")
 ui.inject_css()
+ui.demo_banner()
 ui.get_store()  # creates data/configs and loads the seed example on first run
 
 pages = [
